@@ -1,0 +1,7 @@
+parameters:
+#    teleport_portal.example.class: Teleport\PortalBundle\Example
+
+services:
+#    teleport_portal.example:
+#        class: %teleport_portal.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

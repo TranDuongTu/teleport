@@ -1,0 +1,6 @@
+
+
+teleport_portal:
+    resource: "@TeleportPortalBundle/Resources/config/routing.yml"
+    prefix:   /
+

@@ -1,0 +1,20 @@
+
+teleport_portal_search_flight:
+    pattern: /flights/view/{flightId}
+    defaults: { _controller: TeleportPortalBundle:Search:flightDetail }
+
+teleport_portal_search_airline:
+    pattern: /airlines/view/{airlineId}
+    defaults: { _controller: TeleportPortalBundle:Search:airlineDetail }
+
+teleport_portal_search_airport:
+    pattern: /airports/view/{airportId}
+    defaults: { _controller: TeleportPortalBundle:Search:airportDetail }
+
+teleport_portal_search_nation:
+    pattern: /nations/view/{nationId}
+    defaults: { _controller: TeleportPortalBundle:Search:nationDetail }
+
+teleport_portal_search_ticket_prices:
+    pattern: /tickets/search/{from}/{to}/{lowerPrice}/{upperPrice}/{maxStops}
+    defaults: { _controller: TeleportPortalBundle:Search:ticketSearch, maxStops: 100 }

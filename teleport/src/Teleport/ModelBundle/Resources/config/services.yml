@@ -1,0 +1,71 @@
+services:
+    factory.repository:
+        class: Teleport\ModelBundle\Repositories\RepositoryFactory
+        arguments: [%kernel.environment%, '@service_container']
+
+    mapper.flight:
+        class: Teleport\ModelBundle\Mapper\FlightMapper
+
+    teleport.flight:
+        class: Teleport\ModelBundle\Repositories\Mapper\FlightRepository
+        factory_service: factory.repository
+        factory_method: getRepository
+        arguments: [Flight]
+        calls:
+            - [setMapper, ['@mapper.flight']]
+
+    mapper.nation:
+        class: Teleport\ModelBundle\Mapper\NationMapper
+
+    teleport.nation:
+        class: Teleport\ModelBundle\Repositories\Mapper\NationRepository
+        factory_service: factory.repository
+        factory_method: getRepository
+        arguments: [Nation]
+        calls:
+            - [setMapper, ['@mapper.nation']]
+
+
+    mapper.airline:
+        class: Teleport\ModelBundle\Mapper\AirlineMapper
+
+    teleport.airline:
+        class: Teleport\ModelBundle\Repositories\Mapper\AirlineRepository
+        factory_service: factory.repository
+        factory_method: getRepository
+        arguments: [Airline]
+        calls:
+            - [setMapper, ['@mapper.airline']]
+
+    mapper.airport:
+        class: Teleport\ModelBundle\Mapper\AirportMapper
+
+    teleport.airport:
+        class: Teleport\ModelBundle\Repositories\Mapper\AirportRepository
+        factory_service: factory.repository
+        factory_method: getRepository
+        arguments: [Airport]
+        calls:
+            - [setMapper, ['@mapper.airport']]
+
+    mapper.ticket:
+        class: Teleport\ModelBundle\Mapper\TicketMapper
+
+    teleport.ticket:
+        class: Teleport\ModelBundle\Repositories\Mapper\TicketRepository
+        factory_service: factory.repository
+        factory_method: getRepository
+        arguments: [Ticket]
+        calls:
+            - [setMapper, ['@mapper.ticket']]
+
+    mapper.stop:
+            class: Teleport\ModelBundle\Mapper\StopMapper
+
+    teleport.stop:
+        class: Teleport\ModelBundle\Repositories\Mapper\StopRepository
+        factory_service: factory.repository
+        factory_method: getRepository
+        arguments: [Stop]
+        calls:
+            - [setMapper, ['@mapper.stop']]
